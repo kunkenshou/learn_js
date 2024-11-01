@@ -26,9 +26,11 @@ addEventListener("DOMContentLoaded", (event) => {
   const str_minutes = minutes.toString();
   const str_seconds = Seconds.toString();
   
-  let time = `${str_hours}時${str_minutes}分${str_seconds}秒`
-  
-  console.log(time);
+  //let time = `${str_hours}時${str_minutes}分${str_seconds}秒`
+  const item = document.getElementById("hoge");
+  item.innerHTML = `${str_hours}時${str_minutes}分${str_seconds}秒`
+
+  //console.log(time);
   }
   });
   
