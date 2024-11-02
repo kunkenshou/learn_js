@@ -14,9 +14,9 @@
 
 addEventListener("DOMContentLoaded", (event) => {
 
-  let nIntervId = setInterval(flashText, 600);
+  let nIntervId = setInterval(time, 600);
   
-  function flashText(){
+  function time(){
   const today = new Date();
   const hours = today.getHours();
   const minutes = today.getMinutes();
@@ -27,11 +27,33 @@ addEventListener("DOMContentLoaded", (event) => {
   const str_seconds = Seconds.toString();
   
   //let time = `${str_hours}時${str_minutes}分${str_seconds}秒`
-  const item = document.getElementById("hoge");
+  const item = document.getElementById("time");
   item.innerHTML = `${str_hours}時${str_minutes}分${str_seconds}秒`
 
   //console.log(time);
-  }
+}
+
+  const startTime = document.getElementById("startTime");
+  const valueSpan = document.getElementById("value");
+  const btn = document.getElementById("btn");
+  const reset = document.getElementById("reset");
+  
+  startTime.addEventListener(
+    "input",
+    () => {
+      //valueSpan.innerText = startTime.value;
+      alert_start = startTime.value;
+      console.log(alert_start);
+    },
+    false,
+  )
+
+
+  btn.addEventListener("click", (event) => {
+    console.log("ボタンが..");
+  });
+
+
   });
   
   

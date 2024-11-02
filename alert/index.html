@@ -2,13 +2,23 @@
 
 <head>
 <meta charset="utf-8" />
-<title>hoge</title>
+<title>alert</title>
 <script src="alert.js"></script>
 
 </head>
 
 <body>
-<p id="hoge">hoge</p>
+<p id="time">hoge</p>
+<label for="appt">アラームの時間を入力してください</label>
+<input type="time" id="startTime" name="appt" value="00:00"/>
+<p>
+  <code>time</code>入力欄の値:
+  <code>"<span id="value">n/a</span>"</code>
+</p>
+
+<input type="button" id="btn" value="時間を登録" />
+
+<input type="button" id="reset" value="リセット" />
 
 </body>
 
