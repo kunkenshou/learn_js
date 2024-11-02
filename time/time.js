@@ -2,7 +2,7 @@ addEventListener("DOMContentLoaded", (event) => {
 
   let nIntervId = setInterval(time, 600);
   
-  function tiem(){
+  function time(){
   const today = new Date();
   const hours = today.getHours();
   const minutes = today.getMinutes();
