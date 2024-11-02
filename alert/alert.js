@@ -11,8 +11,25 @@ addEventListener("DOMContentLoaded", (event) => {
   
   let str_hours = hours.toString();
   let str_minutes = minutes.toString();
-  const str_seconds = Seconds.toString();
+  let str_seconds = Seconds.toString();
   
+  let times = [
+    str_hours,
+    str_minutes,
+    str_seconds
+  ];
+
+  for (let i = 0; i < times; i++) {
+
+    if(times[i].length === 1){
+      times = "0" + times[i];
+    } else {
+      times = items;
+    }
+  }
+  console.log(times[0] + times[1] + times[2]);
+
+  /*
   if(str_minutes.length === 1){
     str_minutes = 0+str_minutes
   }
@@ -20,7 +37,7 @@ addEventListener("DOMContentLoaded", (event) => {
   if(str_minutes.length === 1){
     str_hours = 0+str_hours
   }
-
+*/
   const time = document.getElementById("time");
   time.innerHTML = `${str_hours}時${str_minutes}分${str_seconds}秒`
   const alert = document.getElementById("alert");
