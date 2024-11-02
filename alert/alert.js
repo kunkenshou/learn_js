@@ -1,16 +1,3 @@
-//alert("hoeg");
-
-//const today = new Date();
-//const hours = today.getHours();
-//const minutes = today.getMinutes();
-//const milliseconds = today.getMilliseconds();
-//const str_hours = hours.toString();
-//const str_minutes = minutes.toString();
-//const str_milliseconds = milliseconds.toString();
- 
-
-//console.log(milliseconds);
-
 
 addEventListener("DOMContentLoaded", (event) => {
 
@@ -22,15 +9,22 @@ addEventListener("DOMContentLoaded", (event) => {
   const minutes = today.getMinutes();
   const Seconds = today.getSeconds();
   
-  const str_hours = hours.toString();
-  const str_minutes = minutes.toString();
+  let str_hours = hours.toString();
+  let str_minutes = minutes.toString();
   const str_seconds = Seconds.toString();
   
-  //let time = `${str_hours}時${str_minutes}分${str_seconds}秒`
-  const item = document.getElementById("time");
-  item.innerHTML = `${str_hours}時${str_minutes}分${str_seconds}秒`
+  if(str_minutes.length === 1){
+    str_minutes = 0+str_minutes
+  }
 
-  //console.log(time);
+  if(str_minutes.length === 1){
+    str_hours = 0+str_hours
+  }
+
+  const time = document.getElementById("time");
+  time.innerHTML = `${str_hours}時${str_minutes}分${str_seconds}秒`
+  const alert = document.getElementById("alert");
+  alert.innerHTML = `${str_hours}:${str_minutes}`
 }
 
   const startTime = document.getElementById("startTime");
@@ -38,21 +32,18 @@ addEventListener("DOMContentLoaded", (event) => {
   const btn = document.getElementById("btn");
   const reset = document.getElementById("reset");
   
-  startTime.addEventListener(
-    "input",
-    () => {
-      //valueSpan.innerText = startTime.value;
-      alert_start = startTime.value;
-      console.log(alert_start);
-    },
-    false,
-  )
-
-
   btn.addEventListener("click", (event) => {
-    console.log("ボタンが..");
+          valueSpan.innerText = startTime.value;
+          alert_start = startTime.value;
+          console.log(alert_start);
   });
 
+
+/*
+  if(time === ){
+
+  }
+*/
 
   });
   
