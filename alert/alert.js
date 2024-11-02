@@ -13,35 +13,34 @@ addEventListener("DOMContentLoaded", (event) => {
   let str_minutes = minutes.toString();
   let str_seconds = Seconds.toString();
   
-  let times = [
+  let time_now = [
     str_hours,
     str_minutes,
     str_seconds,
   ];
 
-  for (let i = 0; i < times.length; i++) {
+  for (let i = 0; i < time_now.length; i++) {
     
-    if(times[i].length === 1){
-      times[i] = `0` + times[i];
+    if(time_now[i].length === 1){
+      time_now[i] = `0` + time_now[i];
     } else {
-      times[i] = times[i];
+      time_now[i] = time_now[i];
     }
     
   }
 
   const time = document.getElementById("time");
-  time.innerHTML = `${times[0]}時${times[1]}分${times[2]}秒`
+  time.innerHTML = `${time_now[0]}時${time_now[1]}分${time_now[2]}秒`
 
   const alert = document.getElementById("alert");
-  alert.innerText = `${times[0]}:${times[1]}`
-  const time_now = `${times[0]}:${times[1]}`
+  alert.innerText = `${time_now[0]}:${time_now[1]}`
   //console.log(`${times[0]}:${times[1]}:${times[2]}`);
 }
 
   const startTime = document.getElementById("startTime");
   const valueSpan = document.getElementById("value");
   const btn = document.getElementById("btn");
-  const reset = document.getElementById("reset");
+  //const reset = document.getElementById("reset");
 
   startTime.addEventListener("input", (event =>{
     valueSpan.innerText = startTime.value;
@@ -50,44 +49,25 @@ addEventListener("DOMContentLoaded", (event) => {
 
 
   btn.addEventListener("click", (event) => {
-          const alert_start = document.getElementById("value");
+          const alert_time = document.getElementById("value");
           const time_now = document.getElementById("alert");
-          const str_timeNow = time_now.innerText;
-          const str_alertStart = alert_start.innerText;
-          console.log(str_timeNow);
-          console.log(str_alertStart);
+          const str_timenow = time_now.innerText;
+          const str_alerttime = alert_time.innerText;
+          console.log(str_timenow);
+          console.log(str_alerttime);
           
-          if(str_timeNow === str_alertStart) {
+          if(str_timenow === str_alerttime) {
             alert("時間です");
-            console.log(time_now);
-            console.log(alert_start);
+            console.log(str_timenow);
+            console.log(str_alerttime);
           }else{
             alert("時間ではありません");
-            console.log(time_now);
-            console.log(alert_start);
+            console.log(str_timenow);
+            console.log(str_alerttime);
           }
           
         });
 
+
+
   });
-  
-  
-  /*
-  const time_now = "11時42分";
-  
-  if (time == time_now ){
-  alert("yes");
-  }else{
-  alert("no");
-  }
-  
-  
-  const item = document.getElementById("hoge");
-  item.innerHTML = time;
-  console.log(item.id);
-  console.log(typeof item);
-  
-  */
-  
-  
-  
