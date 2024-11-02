@@ -16,51 +16,58 @@ addEventListener("DOMContentLoaded", (event) => {
   let times = [
     str_hours,
     str_minutes,
-    str_seconds
+    str_seconds,
   ];
 
-  for (let i = 0; i < times; i++) {
-
+  for (let i = 0; i < times.length; i++) {
+    
     if(times[i].length === 1){
-      times = "0" + times[i];
+      times[i] = `0` + times[i];
     } else {
-      times = items;
+      times[i] = times[i];
     }
-  }
-  console.log(times[0] + times[1] + times[2]);
-
-  /*
-  if(str_minutes.length === 1){
-    str_minutes = 0+str_minutes
+    
   }
 
-  if(str_minutes.length === 1){
-    str_hours = 0+str_hours
-  }
-*/
   const time = document.getElementById("time");
-  time.innerHTML = `${str_hours}時${str_minutes}分${str_seconds}秒`
+  time.innerHTML = `${times[0]}時${times[1]}分${times[2]}秒`
+
   const alert = document.getElementById("alert");
-  alert.innerHTML = `${str_hours}:${str_minutes}`
+  alert.innerText = `${times[0]}:${times[1]}`
+  const time_now = `${times[0]}:${times[1]}`
+  //console.log(`${times[0]}:${times[1]}:${times[2]}`);
 }
 
   const startTime = document.getElementById("startTime");
   const valueSpan = document.getElementById("value");
   const btn = document.getElementById("btn");
   const reset = document.getElementById("reset");
-  
+
+  startTime.addEventListener("input", (event =>{
+    valueSpan.innerText = startTime.value;
+ })
+); 
+
+
   btn.addEventListener("click", (event) => {
-          valueSpan.innerText = startTime.value;
-          alert_start = startTime.value;
-          console.log(alert_start);
-  });
-
-
-/*
-  if(time === ){
-
-  }
-*/
+          const alert_start = document.getElementById("value");
+          const time_now = document.getElementById("alert");
+          const str_timeNow = time_now.innerText;
+          const str_alertStart = alert_start.innerText;
+          console.log(str_timeNow);
+          console.log(str_alertStart);
+          
+          if(str_timeNow === str_alertStart) {
+            alert("時間です");
+            console.log(time_now);
+            console.log(alert_start);
+          }else{
+            alert("時間ではありません");
+            console.log(time_now);
+            console.log(alert_start);
+          }
+          
+        });
 
   });
   
