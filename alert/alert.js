@@ -1,5 +1,20 @@
 
+
+
 addEventListener("DOMContentLoaded", (event) => {
+
+  const startTime = document.getElementById("startTime");
+  const valueSpan = document.getElementById("value");
+  const btn = document.getElementById("btn");
+  const reset = document.getElementById("reset");
+
+  btn.addEventListener("click", (event) => {
+    valueSpan.innerText = startTime.value;
+  });
+
+  reset.addEventListener("click", (event) => {
+   valueSpan.innerText = "";
+  });
 
   let nIntervId = setInterval(time, 600);
   
@@ -13,61 +28,50 @@ addEventListener("DOMContentLoaded", (event) => {
   let str_minutes = minutes.toString();
   let str_seconds = Seconds.toString();
   
-  let time_now = [
+  let time_arry = [
     str_hours,
     str_minutes,
     str_seconds,
   ];
 
-  for (let i = 0; i < time_now.length; i++) {
+  for (let i = 0; i < time_arry.length; i++) {
     
-    if(time_now[i].length === 1){
-      time_now[i] = `0` + time_now[i];
+    if(time_arry[i].length === 1){
+      time_arry[i] = `0` + time_arry[i];
     } else {
-      time_now[i] = time_now[i];
+      time_arry[i] = time_arry[i];
     }
     
   }
 
   const time = document.getElementById("time");
-  time.innerHTML = `${time_now[0]}時${time_now[1]}分${time_now[2]}秒`
+  time.innerText = `${time_arry[0]}時${time_arry[1]}分${time_arry[2]}秒`
+ 
+  const alert_time = document.getElementById("value");
+  const navi = document.getElementById("navi");
+  const time_now = `${time_arry[0]}:${time_arry[1]}`
+  const str_alerttime = alert_time.innerText;
 
-  const alert = document.getElementById("alert");
-  alert.innerText = `${time_now[0]}:${time_now[1]}`
-  //console.log(`${times[0]}:${times[1]}:${times[2]}`);
+  function normal(){
+    navi.innerHTML = "時間ではありません";
+  }
+
+  function alert(){
+    console.log("hgoe");
+    navi.innerHTML = "時間です";
+  }
+
+  if(time_now === str_alerttime) {
+    alert();
+    /*
+    console.log("時間です");
+    console.log(time_now);
+    console.log(str_alerttime);
+    window.alert("時間です");
+    */
+  }else{
+    normal();
+  }
+
 }
-
-  const startTime = document.getElementById("startTime");
-  const valueSpan = document.getElementById("value");
-  const btn = document.getElementById("btn");
-  //const reset = document.getElementById("reset");
-
-  startTime.addEventListener("input", (event =>{
-    valueSpan.innerText = startTime.value;
- })
-); 
-
-
-  btn.addEventListener("click", (event) => {
-          const alert_time = document.getElementById("value");
-          const time_now = document.getElementById("alert");
-          const str_timenow = time_now.innerText;
-          const str_alerttime = alert_time.innerText;
-          console.log(str_timenow);
-          console.log(str_alerttime);
-          
-          if(str_timenow === str_alerttime) {
-            alert("時間です");
-            console.log(str_timenow);
-            console.log(str_alerttime);
-          }else{
-            alert("時間ではありません");
-            console.log(str_timenow);
-            console.log(str_alerttime);
-          }
-          
-        });
-
-
-
   });
