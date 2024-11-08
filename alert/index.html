@@ -4,23 +4,23 @@
 <meta charset="utf-8" />
 <title>alert</title>
 <script src="alert.js"></script>
+<link href="styles/style.css" rel="stylesheet" />
 
 </head>
 
 <body>
 <p id="time">hoge</p>
 <label for="appt">アラームの時間を入力してください</label>
+<input type="checkbox" id="No1" value="hoge" />
 <input type="time" id="startTime" name="appt" value="00:00"/>
+
 <p>
   <code>time</code>入力欄の値:
   <code>"<span id="value">アラーム時間が登録されていません。</span>"</code>
 </p>
 
-<input type="button" id="btn" value="時間を登録" />
 
-<input type="button" id="reset" value="リセット" />
-
-<code><span id="navi">n/s</span></code>
+<code><dialog id="navi">時間です。<button autofocus>閉じる。</button></dialog></code>
 
 </body>
 
