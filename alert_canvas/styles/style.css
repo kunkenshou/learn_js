@@ -1,0 +1,30 @@
+p {
+  color: red;
+}
+
+canvas {
+  position: relative;/* canvasの位置 */
+}
+
+
+#canvas0 {
+   border: solid green 2px;/*罫線 * 種類 * 色 * 太さ*/
+   top: 2px;/* bodyから垂直の位置 */
+   left: 2px;/* bodyから水平の位置 */
+}
+
+.absolute {
+   position: absolute;/* canvasの位置 */
+}
+
+#canvas1 {
+   border: solid Yellow 2px;/*罫線 * 種類 * 色 * 太さ*/
+   top: 10px;/* bodyから垂直の位置 */
+   left: 10px;/* bodyから水平の位置 */
+}
+
+#canvas2 {
+   border: solid Yellow 2px;/*罫線 * 種類 * 色 * 太さ*/
+   top: 10px;/* bodyから垂直の位置 */
+   left: 10px;/* bodyから水平の位置 */
+}
